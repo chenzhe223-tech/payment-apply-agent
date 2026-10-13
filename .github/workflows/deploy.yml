@@ -63,6 +63,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # 自动启用 Pages（首次运行时创建站点）
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
