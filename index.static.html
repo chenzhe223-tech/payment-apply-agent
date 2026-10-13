@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="西南欧营销费用申请 · 付款填报校验与流程指引（依据《【西南欧】营销费用申请流程》）"
+    />
+    <meta name="theme-color" content="#06131f" />
+    <meta name="color-scheme" content="dark" />
+    <title>付款填报助手 · 西南欧营销费用</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306131f'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23E8A24A' stroke-width='2.2'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23F2B96B'/%3E%3C/svg%3E"
+    />
+    <!--
+      GitHub Pages 深链接兜底。
+      仓库为纯静态托管，没有服务端 rewrite：直接访问 /<repo>/flow 时
+      Pages 会返回 404.html（内容与 index.html 相同），但浏览器地址栏
+      仍保留 /<repo>/flow，前端路由可正常接管，无需额外处理。
+      此脚本只做一件事：把 SPA 兜底页在「多余一层 base」时纠正回来。
+    -->
+    <script>
+      (function () {
+        try {
+          var base = document.querySelector('base');
+          if (!base) return;
+          var b = base.getAttribute('href') || '/';
+          var p = location.pathname;
+          // 形如 /repo/repo/flow 的重复前缀 -> 去掉一层
+          if (b !== '/' && p.indexOf(b + b.replace(/^\//, '')) === 0) {
+            history.replaceState(null, '', p.replace(b, '') + location.search + location.hash);
+          }
+        } catch (e) {
+          /* 忽略 */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.static.tsx"></script>
+  </body>
+</html>
